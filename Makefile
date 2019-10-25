@@ -1,0 +1,17 @@
+PY=python
+WORKDIR=$(TEMP)/tstag
+
+
+.PHONY: test
+test: venv
+	$(VENV)/python -m unittest
+
+
+include Makefile.venv
+Makefile.venv:
+	curl \
+		-o Makefile.fetched \
+		-L "https://github.com/sio/Makefile.venv/raw/v2019.10.04/Makefile.venv"
+	echo "7a0a5a7a25ab959c6686b839cd45eb522f1a0662aa6096be5d56106c940aee95 *Makefile.fetched" \
+		| sha256sum --check - \
+		&& mv Makefile.fetched Makefile.venv

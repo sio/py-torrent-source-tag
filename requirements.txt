@@ -1,0 +1,4 @@
+bencoder.pyx
+
+# torf  # Nice library (requires Python 3.6 for f-strings)
+# dottorrent-gui  # (used only for manual testing - creates torrent files)
